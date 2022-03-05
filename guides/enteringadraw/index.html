@@ -8,28 +8,28 @@
     <!-- Primary Meta Tags -->
     <title>Entering a Draw</title>
     <meta name="title" content="Entering a Draw">
-    <meta name="description" content="This is a paragraph." />
+    <meta name="description" content="This article will show you how to enter a draw. For more information on how the smart contract draws work, see the" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.defiprizes.com/guides/enteringadraw/">
     <meta property="og:title" content="Entering a Draw">
-    <meta property="og:description" content="This is a paragraph.">
+    <meta property="og:description" content="This article will show you how to enter a draw. For more information on how the smart contract draws work, see the">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.defiprizes.com/guides/enteringadraw/">
     <meta property="twitter:title" content="Entering a Draw">
-    <meta property="twitter:description" content="This is a paragraph.">
+    <meta property="twitter:description" content="This article will show you how to enter a draw. For more information on how the smart contract draws work, see the">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon.ico" rel="icon" />
-    <link href="/resources/css/retype.css?v=1.11.2.699208580596" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.699797109364" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.699208580596" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.699797109364" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.699208580596" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.699797109364" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -60,6 +60,9 @@
             <!-- Top Nav -->
             <nav class="hidden md:flex">
     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+        <li class="md:mr-6">
+            <a class="block py-2 text-sm text-gray-400 whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://defiprizes.com">App</a>
+        </li>
     </ul>
 </nav>
 
@@ -142,6 +145,16 @@
             class="flex-shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650"
         >
 
+            <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                <nav>
+                    <ul class="flex flex-wrap justify-center items-center">
+                        <li class="mr-6">
+                            <a class="block py-1 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://defiprizes.com">App</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
 
             <a
     class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by"
@@ -174,34 +187,50 @@
         <span>Entering a Draw</span>
     </h1>
 </doc-anchor-target>
-<p>This is a paragraph.</p>
-<p>Both <a href="README.md">internal</a> and <a href="https://example.com">external</a> links work.</p>
-<p><figure class="content-center">
-    <img src="logo.png" alt="Your logo" />
-    <figcaption class="caption">Your logo</figcaption>
-</figure>
-</p>
-<p>Another paragraph with <strong>bold</strong>, <em>italic</em>, <del>strikethrough</del>, and <code v-pre>code</code> samples.</p>
-<hr />
-<doc-anchor-target id="lists">
+<p>This article will show you how to enter a draw. For more information on how the smart contract draws work, see the <a href="/howitworks/prizedraws/">PrizeDraws</a> article in the How It Works section.</p>
+<doc-anchor-target id="1-get-some-tokens">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lists">#</doc-anchor-trigger>
-        <span>Lists</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-get-some-tokens">#</doc-anchor-trigger>
+        <span>1. Get some tokens</span>
     </h2>
 </doc-anchor-target>
-<ul>
-<li>First item</li>
-<li>Second item</li>
-<li>Third item</li>
-</ul>
-<ol>
-<li>First item</li>
-<li>Second item</li>
-<li>Third item</li>
-</ol>
-<blockquote>
-<p>&quot;Cool! This is a quotation.&quot;</p>
-</blockquote>
+<p>For each prize contract, there is a specified deposit token. In the examples below this is the PNG token. You must have some of this token available in your connected wallet. If not, you will be shown a &quot;Get Token&quot; button which will load a Trader Joe swap interface for the deposit token.
+<figure class="content-center">
+    <img src="../../static/screenshots/buy.png" alt="Buy Screenshot" />
+    <figcaption class="caption">Buy Screenshot</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="2-approve-or-permit-tokens">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-approve-or-permit-tokens">#</doc-anchor-trigger>
+        <span>2. Approve or Permit Tokens</span>
+    </h2>
+</doc-anchor-target>
+<p>In order to deposit tokens into the prize contracts, you will need to approve a spending amount. This is required as this is how the prize contract collects your tokens. For some tokens with permit functionality, this step can be bypassed in favour of an off chain signature.</p>
+<doc-anchor-target id="3-deposit-tokens">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-deposit-tokens">#</doc-anchor-trigger>
+        <span>3. Deposit Tokens</span>
+    </h2>
+</doc-anchor-target>
+<p>Deposit the desired amount of tokens into the contract. Remember, the more you deposit, the more chance you have of winning.
+<figure class="content-center">
+    <img src="../../static/screenshots/deposit.png" alt="Deposit Screenshot" />
+    <figcaption class="caption">Deposit Screenshot</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="4-qualify-tokens">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-qualify-tokens">#</doc-anchor-trigger>
+        <span>4. Qualify Tokens</span>
+    </h2>
+</doc-anchor-target>
+<p>Once you have deposited funds, you will have a warmup balance (as shown below). This balance is not yet elligible to win prizes. You must wait until the next draw to qualify your tokens. Once the draw has past, click qualify. All these tokens will then be eligible to win prizes on the next draw!
+<figure class="content-center">
+    <img src="../../static/screenshots/warmup.png" alt="Warmup Screenshot" />
+    <figcaption class="caption">Warmup Screenshot</figcaption>
+</figure>
+</p>
 <div class="flex mb-6">
     <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-red-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -214,10 +243,17 @@
             </svg>
         </div>
         <div class="pr-5 ml-3">
-<p>Need to draw attention to something? Use an alert.</p>
+<p>If you have a warmup balance ready to qualify and want to deposit more, make sure you qualify your warmup balance first, then deposit more tokens. If you do not, you will have to wait until the next draw for both balances.</p>
         </div>
     </div>
 </div>
+<doc-anchor-target id="5-good-luck">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-good-luck">#</doc-anchor-trigger>
+        <span>5. Good Luck!</span>
+    </h2>
+</doc-anchor-target>
+<p>Draws are announced on <a href="https://twitter.com/defiprizes">Twitter</a>, <a href="https://discord.gg/HbgW7kWh56">Discord</a> and shown in the app. If you win you will be allocated a prize balance which you can then claim.</p>
 
 
 
@@ -227,6 +263,27 @@
             </div>
 
             
+<nav class="flex mt-14">
+    <div class="w-1/2">
+        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/guides/addingmetamask/">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+            <span>
+                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                <span class="block mt-1">Adding Metamask</span>
+            </span>
+        </a>
+    </div>
+
+    <div class="w-1/2">
+        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/howitworks/prizedraws/">
+            <span>
+                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                <span class="block mt-1">Prize Draws</span>
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+        </a>
+    </div>
+</nav>
 
 
         </main>
