@@ -9,21 +9,21 @@
     <meta name="generator" content="Retype 2.2">
 
     <!-- Primary Meta Tags -->
-    <title>Brand Assets</title>
-    <meta name="title" content="Brand Assets">
-    <meta name="description" content="favicon-16x16.png favicon-32x32.png large.png large-glow.png large-light.png large-dark.png social-bkg-glow.png" />
+    <title>Architechture</title>
+    <meta name="title" content="Architechture">
+    <meta name="description" content="This section outlines the various different contracts that are deployed to facilitate the main prize contract." />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.defiprizes.com/marketing/brandassets/">
-    <meta property="og:title" content="Brand Assets">
-    <meta property="og:description" content="favicon-16x16.png favicon-32x32.png large.png large-glow.png large-light.png large-dark.png social-bkg-glow.png">
+    <meta property="og:url" content="https://docs.defiprizes.com/howitworks/architechture/">
+    <meta property="og:title" content="Architechture">
+    <meta property="og:description" content="This section outlines the various different contracts that are deployed to facilitate the main prize contract.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.defiprizes.com/marketing/brandassets/">
-    <meta property="twitter:title" content="Brand Assets">
-    <meta property="twitter:description" content="favicon-16x16.png favicon-32x32.png large.png large-glow.png large-light.png large-dark.png social-bkg-glow.png">
+    <meta property="twitter:url" content="https://docs.defiprizes.com/howitworks/architechture/">
+    <meta property="twitter:title" content="Architechture">
+    <meta property="twitter:description" content="This section outlines the various different contracts that are deployed to facilitate the main prize contract.">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -166,41 +166,47 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="brand-assets" class="break-words">
+<doc-anchor-target id="architechture" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#brand-assets">#</doc-anchor-trigger>
-        <span>Brand Assets</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#architechture">#</doc-anchor-trigger>
+        <span>Architechture</span>
     </h1>
 </doc-anchor-target>
+<hr />
+<doc-anchor-target id="blockchain-architechture">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#blockchain-architechture">#</doc-anchor-trigger>
+        <span>Blockchain Architechture</span>
+    </h2>
+</doc-anchor-target>
+<p>This section outlines the various different contracts that are deployed to facilitate the main prize contract.</p>
 <p><figure class="content-center">
-    <img src="../../static/brand/favicon-16x16.png" alt="favicon-16x16.png" />
-    <figcaption class="caption">favicon-16x16.png</figcaption>
-</figure>
-<figure class="content-center">
-    <img src="../../static/brand/favicon-32x32.png" alt="favicon-32x32.png" />
-    <figcaption class="caption">favicon-32x32.png</figcaption>
-</figure>
-<figure class="content-center">
-    <img src="../../static/brand/large.png" alt="large.png" />
-    <figcaption class="caption">large.png</figcaption>
-</figure>
-<figure class="content-center">
-    <img src="../../static/brand/large-glow.png" alt="large-glow.png" />
-    <figcaption class="caption">large-glow.png</figcaption>
-</figure>
-<figure class="content-center">
-    <img src="../../static/brand/large-light.png" alt="large-light.png" />
-    <figcaption class="caption">large-light.png</figcaption>
-</figure>
-<figure class="content-center">
-    <img src="../../static/brand/large-dark.png" alt="large-dark.png" />
-    <figcaption class="caption">large-dark.png</figcaption>
-</figure>
-<figure class="content-center">
-    <img src="../../static/brand/social-bkg-glow.png" alt="social-bkg-glow.png" />
-    <figcaption class="caption">social-bkg-glow.png</figcaption>
+    <img src="../../static/screenshots/architechture-blockchain.jpg" alt="BlockChain Architechture" />
+    <figcaption class="caption">BlockChain Architechture</figcaption>
 </figure>
 </p>
+<p>In this example, when deposits are made to the USDT.e contract, they are instantly sent to the equivelent traderjoe lending contract via a <code v-pre>mint</code> call. The traderjoe lending contract follows a proxy pattern, however the methods that are called are available on the proxy so even if the underlying contract is changed, the abi would still be valid. When withdrawals are made, the <code v-pre>redeemUnderlying</code> function is called which sends the funds back to the prize contract, which in turn sends it back to the original depositor wallet.</p>
+<p>The complexity comes when calculating the prize draw. The total underlying balance of the lending contract increases (due to interest accuring) so the prize contract calculates the difference between the balance deposited and the current balance after interest.</p>
+<p>In addition to this, traderjoe also distributes JOE token rewards. Since the price contract only distributes prizes in one token, a conversion must be made to the prize contract deposit token (USDT.e in this case). A call is made to <code v-pre>claimRewardsInTargetToken</code> on the lending rewards bridge which in turn calls <code v-pre>exchangeTokensForExactTokens</code> in the exchange bridge.</p>
+<p>The lending rewards bridge calculates how much JOE has been awarded and sends it to the exchange bridge to swap it for USDT.e. These &quot;bridge&quot; contracts exist rather than making direct calls so that if the underlying ABI changes, the prize contract is not affected and the new ABI can be deployed with minimal distuption.</p>
+<doc-anchor-target id="application-architechture">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#application-architechture">#</doc-anchor-trigger>
+        <span>Application Architechture</span>
+    </h2>
+</doc-anchor-target>
+<p>The application architechture outlines all the technology pieces that make everything work. The languages are show in brackets.</p>
+<p><figure class="content-center">
+    <img src="../../static/screenshots/architechture-application.jpg" alt="BlockChain Architechture" />
+    <figcaption class="caption">BlockChain Architechture</figcaption>
+</figure>
+</p>
+<p>The main front end react app is deployed in github pages. There are two dependancies of this app.</p>
+<ol>
+<li>The prizes api which is also deployed on github pages. This is responsible for recording all the historic winners.</li>
+<li>The blockchain network which is accessed via a wallet like metamask.</li>
+</ol>
+<p>The final piece is the orchestrator which triggers the draws, updates the winners api and the blockchain.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -210,20 +216,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/marketing/ecosystemlinks/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/howitworks/prizedraws/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Eco​System Links</span>
+                                                <span class="block mt-1">Prize Draws</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/api/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/howitworks/flowoftokens/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">API</span>
+                                                <span class="block mt-1">Flow Of Tokens</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -267,6 +273,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Brand Assets", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Architechture", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>

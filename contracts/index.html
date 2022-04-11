@@ -11,28 +11,28 @@
     <!-- Primary Meta Tags -->
     <title>Contracts</title>
     <meta name="title" content="Contracts">
-    <meta name="description" content="Contract" />
+    <meta name="description" content="This is a list of all DeFi Prizes contracts currently in operation." />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.defiprizes.com/contracts/">
     <meta property="og:title" content="Contracts">
-    <meta property="og:description" content="Contract">
+    <meta property="og:description" content="This is a list of all DeFi Prizes contracts currently in operation.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.defiprizes.com/contracts/">
     <meta property="twitter:title" content="Contracts">
-    <meta property="twitter:description" content="Contract">
+    <meta property="twitter:description" content="This is a list of all DeFi Prizes contracts currently in operation.">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon.ico" rel="icon" />
-    <link href="/resources/css/retype.css?v=2.2.702246366065" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=2.2.703016651788" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=2.2.702246366065" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=2.2.703016651788" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=2.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.2.702246366065" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.2.703016651788" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -173,44 +173,80 @@
     </h1>
 </doc-anchor-target>
 <hr />
+<p>This is a list of all DeFi Prizes contracts currently in operation.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Users should not send any tokens directly to these addresses.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="prize-contracts">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#prize-contracts">#</doc-anchor-trigger>
+        <span>Prize Contracts</span>
+    </h2>
+</doc-anchor-target>
+<p>These are the contracts that users can deposit their tokens into to win prizes.</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
 <th>Contract</th>
-<th>Type</th>
 <th>Address</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>PNG Weekly</td>
-<td>Prize</td>
 <td><a href="https://snowtrace.io/address/0xFf00E787e68cF7fc07CcEA633556fB3f5fBbC000">0xFf00E787e68cF7fc07CcEA633556fB3f5fBbC000</a></td>
 </tr>
 <tr>
 <td>USDT.e Weekly</td>
-<td>Prize</td>
 <td><a href="https://snowtrace.io/address/0xC0ad9Ac7Ee0DA2B94793F70449b706eCDdE6c480">0xC0ad9Ac7Ee0DA2B94793F70449b706eCDdE6c480</a></td>
 </tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="core-contracts">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#core-contracts">#</doc-anchor-trigger>
+        <span>Core Contracts</span>
+    </h2>
+</doc-anchor-target>
+<p>These are the contracts (authored by us) used to facilitate the main prize contracts. Various bridge contracts exist to mitigate the risk of a third party changing their abi.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Contract</th>
+<th>Address</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>TraderJoeRewardsCollector</td>
-<td>Core</td>
 <td><a href="https://snowtrace.io/address/0x9E4dCFcC2a017Ba6f3dFe43FFB97f3971Db32055">0x9E4dCFcC2a017Ba6f3dFe43FFB97f3971Db32055</a></td>
 </tr>
 <tr>
 <td>ExchangeBridge</td>
-<td>Core</td>
 <td><a href="https://snowtrace.io/address/0x2498d70E4a2ED018EEB092101A24827fdfCE7C13">0x2498d70E4a2ED018EEB092101A24827fdfCE7C13</a></td>
 </tr>
 <tr>
 <td>DeFiPrizesToken</td>
-<td>Core</td>
-<td><a href="https://snowtrace.io/address/0x14ab67e29edce0bf220c9e549435d494820075f6">0x8996f43c9f28f7cfb801b53b438fa41de4ec25a6</a></td>
+<td><a href="https://snowtrace.io/address/0x14ab67e29edce0bf220c9e549435d494820075f6">0x14ab67e29edce0bf220c9e549435d494820075f6</a></td>
 </tr>
 <tr>
 <td>Airdrop</td>
-<td>Core</td>
 <td><a href="https://snowtrace.io/address/0x0CDD534DeE7eD845697bC15feeEDb13a98264254">0x0CDD534DeE7eD845697bC15feeEDb13a98264254</a></td>
 </tr>
 </tbody>
@@ -225,16 +261,23 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/marketing/brandassets/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/risks/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Brand Assets</span>
+                                                <span class="block mt-1">Risks</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/roadmap/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Roadmap</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
                                     </div>
                                 </nav>
                             </footer>
