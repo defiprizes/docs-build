@@ -28,11 +28,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon.ico" rel="icon" />
-    <link href="/resources/css/retype.css?v=2.2.703089394785" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=2.2.703179195498" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=2.2.703089394785" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=2.2.703179195498" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=2.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.2.703089394785" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.2.703179195498" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -181,8 +181,8 @@
 </doc-anchor-target>
 <p>This section outlines the various different contracts that are deployed to facilitate the main prize contract.</p>
 <p><figure class="content-center">
-    <img src="../../static/screenshots/architechture-blockchain.jpg" alt="BlockChain Architechture" />
-    <figcaption class="caption">BlockChain Architechture</figcaption>
+    <img src="../../static/screenshots/architechture-blockchain.jpg" alt="Blockchain Architechture" />
+    <figcaption class="caption">Blockchain Architechture</figcaption>
 </figure>
 </p>
 <p>In this example, when deposits are made to the USDT.e contract, they are instantly sent to the equivelent traderjoe lending contract via a <code v-pre>mint</code> call. The traderjoe lending contract follows a proxy pattern, however the methods that are called are available on the proxy so even if the underlying contract is changed, the abi would still be valid. When withdrawals are made, the <code v-pre>redeemUnderlying</code> function is called which sends the funds back to the prize contract, which in turn sends it back to the original depositor wallet.</p>
@@ -195,13 +195,13 @@
         <span>Application Architechture</span>
     </h2>
 </doc-anchor-target>
-<p>The application architechture outlines all the technology pieces that make everything work. The languages are show in brackets.</p>
+<p>The application architechture outlines all the technology pieces that make everything work. The languages are shown in brackets.</p>
 <p><figure class="content-center">
-    <img src="../../static/screenshots/architechture-application.jpg" alt="BlockChain Architechture" />
-    <figcaption class="caption">BlockChain Architechture</figcaption>
+    <img src="../../static/screenshots/architechture-application.jpg" alt="Application Architechture" />
+    <figcaption class="caption">Application Architechture</figcaption>
 </figure>
 </p>
-<p>The main front end react app is deployed in github pages. There are two dependancies of this app.</p>
+<p>The main front end react app is deployed in github pages. There are two dependencies of this app.</p>
 <ol>
 <li>The prizes api which is also deployed on github pages. This is responsible for recording all the historic winners.</li>
 <li>The blockchain network which is accessed via a wallet like metamask.</li>
