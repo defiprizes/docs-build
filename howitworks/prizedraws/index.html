@@ -11,29 +11,29 @@
     <!-- Primary Meta Tags -->
     <title>Prize Draws</title>
     <meta name="title" content="Prize Draws">
-    <meta name="description" content="The mechanism for how prize draws work will be added here. Check back for more information." />
+    <meta name="description" content="When you deposit into a contract, you are given 1 chance of winning for every smallest unit of token from your qualified balance. E.g. USDT." />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.defiprizes.com/howitworks/prizedraws/">
     <meta property="og:title" content="Prize Draws">
-    <meta property="og:description" content="The mechanism for how prize draws work will be added here. Check back for more information.">
+    <meta property="og:description" content="When you deposit into a contract, you are given 1 chance of winning for every smallest unit of token from your qualified balance. E.g. USDT.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.defiprizes.com/howitworks/prizedraws/">
     <meta property="twitter:title" content="Prize Draws">
-    <meta property="twitter:description" content="The mechanism for how prize draws work will be added here. Check back for more information.">
+    <meta property="twitter:description" content="When you deposit into a contract, you are given 1 chance of winning for every smallest unit of token from your qualified balance. E.g. USDT.">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/static/favicon.ico" rel="icon" />
-    <link href="/resources/css/retype.css?v=2.2.703179195498" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=2.2.703365593679" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=2.2.703179195498" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=2.2.703365593679" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=2.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.2.703179195498" defer></script>
-    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=2.2.703179195498" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.2.703365593679" defer></script>
+    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=2.2.703365593679" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -173,14 +173,15 @@
         <span>Prize Draws</span>
     </h1>
 </doc-anchor-target>
-<p>The mechanism for how prize draws work will be added here. Check back for more information.</p>
+<p>When you deposit into a contract, you are given 1 chance of winning for every smallest unit of token from your qualified balance. E.g. USDT.e has 6 decimal places so if you deposit and qualify 0.000001 you have 1 chance of winning. If you deposit 10 USDT.e, you have 10,000,000 chances of winning. In addition to this, most draws have more than one prize to be won. This means you will have 10,000,000 chances of winning for each prize. For the purposes of this article, a chance can be referred to as a entry ticket.</p>
+<p>When a draw is made, in order to determine the winner for a prize, all entry tickets are added up. Then a random number is generated between 1 and the total number of tickets. This random number determines the winning ticket which gets allocated the price. For each draw this happens once for each prize available. This random number is generated using <a href="https://pkg.go.dev/crypto/rand">crypto/rand</a> which makes low level unix calls to gain a large amount of entropy for a random number.</p>
 <doc-anchor-target id="winners-algorithm">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#winners-algorithm">#</doc-anchor-trigger>
         <span>Winners Algorithm</span>
     </h2>
 </doc-anchor-target>
-<p>Below is the off-chain code that is run for every prize draw. It outputs the addresses in an array where position 0 is the gold winner and 1-5 are the silver winners. The code uses <a href="https://pkg.go.dev/crypto/rand">crypto/rand</a> to securely generate random numbers.</p>
+<p>Below is the off-chain code that is run for every prize draw. It outputs the addresses in an array where position 0 is the gold winner and 1-5 are the silver winners. The prize contract is then called with these winning addresses to distribute the prizes. Finally, the prize history api is also updated so the website is updated with the new winners.</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
 <div class="codeblock-title">winners.go</div>
 <pre class="language-go"><code v-pre class="language-go">func (o *Draw) selectWinners(qualifiedEntries []Entry, numberOfWinners uint) ([]common.Address, error) {
